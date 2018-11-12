@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <title>Hello World</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">
+              Welcome, <span id="user"></span>
+            </h5>
+            <form class="form-signin">
+              <button id="signout" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                Sign Out
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyCF2SSE2-nqgGhef61oSoxB665Tbiq7WJU",
+      authDomain: "shopee-16c81.firebaseapp.com",
+      databaseURL: "https://shopee-16c81.firebaseio.com",
+      projectId: "shopee-16c81",
+      storageBucket: "shopee-16c81.appspot.com",
+      messagingSenderId: "404787069897"
+    };
+    firebase.initializeApp(config);
+
+    $(function () {
+      var username = localStorage.getItem("username");
+      $("#user").html(username);
+
+      $("#signout").click(function () {
+        firebase
+          .auth()
+          .signOut()
+          .then(function () {
+            window.location.href = "index.html";
+          })
+          .catch(function (error) {
+            // An error happened.
+          });
+      });
+    });
+  </script>
+</body>
+
+</html>
