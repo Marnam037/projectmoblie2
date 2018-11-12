@@ -23,6 +23,17 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-buildinfo" spec="2.0.2" />
+    <plugin name="cordova-plugin-browsertab" spec="0.2.0" />
+    <universal-links>
+        <host name="korawitcordova.page.link" scheme="https" />
+        <host name="shopee-16c81.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+        <preference name="AndroidLaunchMode" value="singleTask" />
+    </universal-links>
+    <plugin name="cordova-universal-links-plugin" spec="https://github.com/walteram/cordova-universal-links-plugin" />
+    <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="android" spec="^7.1.2" />
 </widget>
