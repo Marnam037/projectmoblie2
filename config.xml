@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.korawit.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.Huntur.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HelloWorld</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -25,15 +25,16 @@
     </platform>
     <plugin name="cordova-plugin-buildinfo" spec="2.0.2" />
     <plugin name="cordova-plugin-browsertab" spec="0.2.0" />
+    <plugin name="cordova-universal-links-plugin" spec="https://github.com/walteram/cordova-universal-links-plugin" />
+    <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" />
     <universal-links>
-        <host name="korawitcordova.page.link" scheme="https" />
-        <host name="shopee-16c81.firebaseapp.com" scheme="https">
+        <host name="shopee702b4.page.link/rniX" scheme="https" />
+        <host name="shopee-702b4.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback" />
         </host>
         <preference name="AndroidLaunchMode" value="singleTask" />
     </universal-links>
-    <plugin name="cordova-universal-links-plugin" spec="https://github.com/walteram/cordova-universal-links-plugin" />
-    <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" />
+    <plugin name="cordova-plugin-qrscanner" spec="^2.6.0" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="android" spec="^7.1.2" />
 </widget>

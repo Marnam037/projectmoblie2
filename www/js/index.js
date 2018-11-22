@@ -3,12 +3,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
   console.log('onDeviceReady');
   var config = {
-    apiKey: "AIzaSyCF2SSE2-nqgGhef61oSoxB665Tbiq7WJU",
-    authDomain: "shopee-16c81.firebaseapp.com",
-    databaseURL: "https://shopee-16c81.firebaseio.com",
-    projectId: "shopee-16c81",
-    storageBucket: "shopee-16c81.appspot.com",
-    messagingSenderId: "404787069897"
+    apiKey: "AIzaSyBkDTuc1BhgNmpjTSPMP4iMgHhbloupCSc",
+    authDomain: "shopee-702b4.firebaseapp.com",
+    databaseURL: "https://shopee-702b4.firebaseio.com",
+    projectId: "shopee-702b4",
+    storageBucket: "shopee-702b4.appspot.com",
+    messagingSenderId: "148769103869"
   };
   firebase.initializeApp(config);
   
@@ -32,6 +32,7 @@ function onDeviceReady() {
   });
   
   $("#google").click(function () {
+  
     console.log('Start Google sign in');
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
@@ -55,6 +56,43 @@ function onDeviceReady() {
       // ...
     });
   });
+$("#facebook").click(function () {
+  console.log("Start Facebook Login")
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().getRedirectResult().then(function (result) {
+        if (result.credential) {
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
+            // ...
+        }
+        // The signed-in user info.
+        var user = result.user;
+    }).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+    });
+}
+)
+  $("#login").click(function () {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        firebase.auth().signInWithEmailAndPassword(username, password).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(error.code + ':' + error.message);
+            ons.notification.alert('login feiled');
+            // ...
+        });
+    })
+   
 }
 
 

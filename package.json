@@ -1,5 +1,5 @@
 {
-    "name": "com.korawit.hellocordova",
+    "name": "com.Huntur.hello",
     "displayName": "HelloWorld",
     "version": "1.0.0",
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
@@ -12,13 +12,16 @@
     "dependencies": {
         "cordova-android": "^7.1.2",
         "cordova-browser": "^5.0.4",
-        "cordova-plugin-browsertab": "0.2.0",
-        "cordova-plugin-buildinfo": "2.0.2",
-        "cordova-plugin-compat": "1.2.0",
-        "cordova-plugin-inappbrowser": "3.0.0",
+        "cordova-plugin-browsertab": "^0.2.0",
+        "cordova-plugin-buildinfo": "^2.0.2",
+        "cordova-plugin-compat": "^1.2.0",
+        "cordova-plugin-inappbrowser": "^3.0.0",
+        "cordova-plugin-qrscanner": "^2.6.0",
         "cordova-plugin-whitelist": "^1.3.3",
         "cordova-universal-links-plugin": "git+https://github.com/walteram/cordova-universal-links-plugin.git",
-        "cordova-universal-links-plugin-fix": "1.2.1"
+        "cordova-universal-links-plugin-fix": "1.2.1",
+        "ejs": "^2.6.1",
+        "express": "^4.16.4"
     },
     "cordova": {
         "plugins": {
@@ -26,7 +29,8 @@
             "cordova-plugin-buildinfo": {},
             "cordova-universal-links-plugin": {},
             "cordova-plugin-browsertab": {},
-            "cordova-plugin-inappbrowser": {}
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-qrscanner": {}
         },
         "platforms": [
             "browser",
